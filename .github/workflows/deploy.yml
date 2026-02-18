@@ -1,4 +1,4 @@
-name: Deploy to Jetstream?
+name: Deploy to Jetstream2
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # 1. Go to the project directory
-            cd /home/exouser/fractalize
+            cd /home/exouser/wildfire
             
             # 2. Pull the latest code from GitHub
             git pull origin main
@@ -26,4 +26,4 @@ jobs:
             /home/exouser/.local/bin/uv sync
             
             # 4. Restart the systemd service to pick up changes
-            sudo systemctl restart fractalize
+            sudo systemctl restart wildfire
