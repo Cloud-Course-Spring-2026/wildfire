@@ -116,27 +116,7 @@ def render(density: float = 0.6, steps: int = 60):
 
     # Stitch frames into a GIF
     buf = BytesIO()
-    frames[0].save(name: Deploy Wildfire
-
-on:
-  push:
-    branches: [ "main" ]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Server
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd /home/exouser/wildfire
-            git pull origin main
-            /home/exouser/.local/bin/uv sync
-            sudo systemctl restart wildfire
+    frames[0].save(
         buf, 
         format="GIF",
         save_all=True,
